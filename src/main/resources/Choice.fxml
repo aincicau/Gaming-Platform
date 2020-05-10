@@ -5,11 +5,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.fis.student.Controllers.ChoiceController">
    <children>
-      <Button layoutX="220.0" layoutY="200.0" mnemonicParsing="false" text="Customer" />
-      <Button layoutX="314.0" layoutY="200.0" mnemonicParsing="false" text="Administrator" />
-      <Label layoutX="174.0" layoutY="204.0" text="Role:" />
+      <Button layoutX="220.0" layoutY="200.0" mnemonicParsing="false" onAction="#actiuneButon1" text="Customer" />
+      <Button layoutX="314.0" layoutY="200.0" mnemonicParsing="false" onAction="#actiuneButon2" text="Administrator" />
+      <Label fx:id="id" layoutX="174.0" layoutY="204.0" text="Role:" />
       <Label layoutX="212.0" layoutY="99.0" text="Welcome, dear ...">
          <font>
             <Font size="27.0" />
