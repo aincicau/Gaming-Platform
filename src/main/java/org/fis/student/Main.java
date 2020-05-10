@@ -1,3 +1,5 @@
+package org.fis.student;
+
 import javafx.application.Application;
 import javafx.stage.Stage;
 
