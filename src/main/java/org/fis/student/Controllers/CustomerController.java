@@ -5,13 +5,26 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import org.fis.student.Exceptions.Incorrect;
+import org.fis.student.Models.Customer;
+import org.fis.student.Services.CustomerService;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
 
+import java.io.FileReader;
 import java.io.IOException;
 
 public class CustomerController {
     @FXML
     private Label id;
+    @FXML
+    private TextField fieldID;
+    @FXML
+    private PasswordField fieldPass;
 
     @FXML
     public void butonBack()
@@ -24,6 +37,19 @@ public class CustomerController {
             stage.setScene(new Scene(ceva,600,600));
 
         }catch(IOException e) {
+            System.out.println(e);
+        }
+    }
+
+    @FXML
+    public void butonLogin()
+    {
+        try {
+            if (CustomerService.checkCredentials(fieldID.getText(), fieldPass.getText()))
+                System.out.println("te duce la shop page");
+            else
+                throw new Incorrect();
+        }catch (Incorrect e){
             System.out.println(e);
         }
     }

@@ -2,15 +2,16 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.fis.student.Controllers.CustomerController">
    <children>
-      <Button layoutX="274.0" layoutY="274.0" mnemonicParsing="false" text="Login" />
-      <TextField layoutX="225.0" layoutY="175.0" />
-      <TextField layoutX="226.0" layoutY="224.0" />
+      <Button layoutX="274.0" layoutY="274.0" mnemonicParsing="false" onAction="#butonLogin" text="Login" />
+      <TextField fx:id="fieldID" layoutX="225.0" layoutY="175.0" promptText="username" />
+      <PasswordField fx:id="fieldPass" layoutX="226.0" layoutY="224.0" promptText="password" />
       <Label layoutX="204.0" layoutY="179.0" text="ID:" />
       <Label layoutX="166.0" layoutY="228.0" text="Password:" />
       <Label fx:id="id" layoutX="240.0" layoutY="75.0" text="Customer">
