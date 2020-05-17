@@ -44,4 +44,12 @@ public class Game {
     public int hashCode() {
         return 31*name.hashCode() + price;
     }
+
+    @Override
+    public String toString() {
+        return "Game{" +
+                "name='" + name + '\'' +
+                ", price=" + price +
+                '}';
+    }
 }
