@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="236.0" layoutY="34.0" text="Shop Page">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Label>
+      <Button layoutX="34.0" layoutY="345.0" mnemonicParsing="false" text="My Games" />
+      <ListView layoutX="100.0" layoutY="93.0" prefHeight="200.0" prefWidth="200.0" />
+      <Label layoutX="393.0" layoutY="93.0" text="Credit:" />
+      <Label layoutX="441.0" layoutY="92.0" style="-fx-border-color: #000000; -fx-border-width: 1; -fx-max-width: 300;" text="10000" />
+      <Button layoutX="41.0" layoutY="34.0" mnemonicParsing="false" text="Log out" />
+   </children>
+</AnchorPane>
