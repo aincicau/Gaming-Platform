@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Assassin's Creed",
+    "price": 150
+  },
+  {
+    "name": "CS:GO",
+    "price": 25
+  },
+  {
+    "name": "Poker",
+    "price": 25
+  },
+  {
+    "name": "Watch Dogs",
+    "price": 100
+  },
+  {
+    "name": "NFS Heat",
+    "price": 200
+  }
+]
