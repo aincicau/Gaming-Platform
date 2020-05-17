@@ -40,8 +40,16 @@ public class CustomerController {
     public void butonLogin()
     {
         try {
-            if (CustomerService.checkCredentials(fieldID.getText(), CustomerService.encodePassword(fieldPass.getText())))
-                System.out.println("te duce la shop page");
+            if (CustomerService.checkCredentials(fieldID.getText(), CustomerService.encodePassword(fieldPass.getText()))){
+                try{
+                    Stage stage=(Stage)id.getScene().getWindow();
+                    Parent ceva = FXMLLoader.load(getClass().getClassLoader().getResource("ShopPage.fxml"));
+                    stage.setTitle("Shop Page");
+                    stage.setScene(new Scene(ceva,600,600));
+                }catch (Exception e){
+                    System.out.println(e);
+                }
+            }
             else
                 throw new IncorrectCustomer();
         }catch (IncorrectCustomer e){
