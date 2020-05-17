@@ -41,4 +41,10 @@ public class CustomerService {
 
         return found;
     }
+
+    public static String encodePassword(String password){
+        String result = Base64.getEncoder().encodeToString(password.getBytes());
+
+        return result;
+    }
 }

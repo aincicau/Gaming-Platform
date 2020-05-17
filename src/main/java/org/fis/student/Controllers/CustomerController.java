@@ -40,7 +40,7 @@ public class CustomerController {
     public void butonLogin()
     {
         try {
-            if (CustomerService.checkCredentials(fieldID.getText(), fieldPass.getText()))
+            if (CustomerService.checkCredentials(fieldID.getText(), CustomerService.encodePassword(fieldPass.getText())))
                 System.out.println("te duce la shop page");
             else
                 throw new IncorrectCustomer();

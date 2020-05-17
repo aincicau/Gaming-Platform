@@ -6,7 +6,11 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 import java.io.FileReader;
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
+import java.util.Base64;
 
 public class AdminService {
     private static ArrayList<Admin> a = new ArrayList<>();
@@ -40,5 +44,11 @@ public class AdminService {
         }
 
         return found;
+    }
+
+    public static String encodePassword(String password){
+        String result = Base64.getEncoder().encodeToString(password.getBytes());
+
+        return result;
     }
 }

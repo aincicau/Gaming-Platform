@@ -9,7 +9,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import org.fis.student.Exceptions.IncorrectAdmin;
-import org.fis.student.Exceptions.IncorrectCustomer;
+import org.fis.student.Models.Admin;
 import org.fis.student.Services.AdminService;
 
 import java.io.IOException;
@@ -40,7 +40,7 @@ public class AdminController {
     @FXML
     public void butonLogin(){
         try {
-            if (AdminService.checkCredentials(fieldID.getText(), fieldPass.getText()))
+            if (AdminService.checkCredentials(fieldID.getText(), AdminService.encodePassword(fieldPass.getText())))
                 System.out.println("te duce la admin page");
             else
                 throw new IncorrectAdmin();

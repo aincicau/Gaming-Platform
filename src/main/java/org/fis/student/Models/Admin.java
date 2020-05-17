@@ -1,7 +1,5 @@
 package org.fis.student.Models;
 
-import java.util.Objects;
-
 public class Admin {
     private String username;
     private String password;
