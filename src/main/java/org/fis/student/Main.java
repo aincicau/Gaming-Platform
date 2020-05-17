@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import org.fis.student.Services.AdminService;
 import org.fis.student.Services.CustomerService;
 
 public class Main extends Application {
@@ -16,6 +17,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         CustomerService.loadCustomers();
+        AdminService.loadAdmins();
 
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Choice.fxml"));
         primaryStage.setTitle("Choice");
