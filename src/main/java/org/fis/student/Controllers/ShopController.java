@@ -5,12 +5,21 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
 import javafx.stage.Stage;
+import org.fis.student.Models.Game;
 
 
 public class ShopController {
     @FXML
     private Button logoutButton;
+    @FXML
+    private ListView<Game> listView;
+
+    @FXML
+    public void initialize(){
+
+    }
 
     @FXML
     public void logout(){
