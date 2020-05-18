@@ -1,24 +1,35 @@
 package org.fis.student.Controllers;
 
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ListView;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import org.fis.student.Models.Game;
-
+import org.fis.student.Services.GameService;
+import javafx.collections.FXCollections;
 
 public class ShopController {
     @FXML
     private Button logoutButton;
     @FXML
-    private ListView<Game> listView;
+    private TableView<Game> tableView;
+    @FXML
+    private TableColumn<Game,String> nameColumn;
+    @FXML
+    private TableColumn<Game,Integer> priceColumn;
+    @FXML
+    private TableColumn<Game,Button> purchaseColumn;
 
     @FXML
     public void initialize(){
-
+        tableView.setItems(FXCollections.observableArrayList(GameService.getG()));
+        nameColumn.setCellValueFactory(new PropertyValueFactory<Game,String>("name"));
+        priceColumn.setCellValueFactory(new PropertyValueFactory<Game,Integer>("price"));
+        purchaseColumn.setCellValueFactory(new PropertyValueFactory<Game,Button>("purchase buton"));
     }
 
     @FXML

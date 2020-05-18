@@ -1,6 +1,5 @@
 package org.fis.student.Services;
 
-import javafx.beans.binding.IntegerBinding;
 import org.fis.student.Models.Game;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -26,5 +25,9 @@ public class GameService {
         }catch (Exception e){
             System.out.println(e);
         }
+    }
+
+    public static ArrayList<Game> getG() {
+        return g;
     }
 }
