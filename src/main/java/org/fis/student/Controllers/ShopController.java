@@ -95,4 +95,16 @@ public class ShopController {
 
         CustomerService.writeCustomers();
     }
+
+    @FXML
+    public void myGames(){
+        try{
+            Stage stage=(Stage)tableView.getScene().getWindow();
+            Parent ceva = FXMLLoader.load(getClass().getClassLoader().getResource("MyGames.fxml"));
+            stage.setTitle("My Games");
+            stage.setScene(new Scene(ceva,600,600));
+        }catch (Exception e){
+            System.out.println(e);
+        }
+    }
 }
