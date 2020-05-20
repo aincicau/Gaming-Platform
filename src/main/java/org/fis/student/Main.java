@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import org.fis.student.Services.AdminService;
 import org.fis.student.Services.CustomerService;
+import org.fis.student.Services.GameService;
 
 public class Main extends Application {
 
@@ -18,6 +19,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception {
         CustomerService.loadCustomers();
         AdminService.loadAdmins();
+        GameService.loadGames();
 
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Choice.fxml"));
         primaryStage.setTitle("Choice");
