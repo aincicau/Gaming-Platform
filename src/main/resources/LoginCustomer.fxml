@@ -4,21 +4,47 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.fis.student.Controllers.CustomerController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #9060cc;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.fis.student.Controllers.CustomerController">
    <children>
-      <Button layoutX="274.0" layoutY="274.0" mnemonicParsing="false" onAction="#butonLogin" text="Login" />
+      <Button layoutX="274.0" layoutY="274.0" mnemonicParsing="false" onAction="#butonLogin" style="-fx-background-color: #000000;" text="Login" textFill="WHITE" />
       <TextField fx:id="fieldID" layoutX="225.0" layoutY="175.0" promptText="username" />
       <PasswordField fx:id="fieldPass" layoutX="226.0" layoutY="224.0" promptText="password" />
-      <Label layoutX="204.0" layoutY="179.0" text="ID:" />
-      <Label layoutX="166.0" layoutY="228.0" text="Password:" />
+      <Label layoutX="192.0" layoutY="179.0" text="ID:">
+         <font>
+            <Font name="OCR A Extended" size="16.0" />
+         </font></Label>
+      <Label layoutX="133.0" layoutY="228.0" text="Password:">
+         <font>
+            <Font name="OCR A Extended" size="16.0" />
+         </font></Label>
       <Label fx:id="id" layoutX="240.0" layoutY="75.0" text="Customer">
          <font>
-            <Font size="27.0" />
+            <Font name="OCR A Extended" size="27.0" />
          </font>
       </Label>
-      <Button layoutX="14.0" layoutY="22.0" mnemonicParsing="false" onAction="#butonBack" text="Back" />
+      <Button layoutX="14.0" layoutY="22.0" mnemonicParsing="false" onAction="#butonBack" style="-fx-background-color: #000000;" text="Back" textFill="WHITE" />
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="7.0" layoutY="245.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="7.0" layoutY="245.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="386.0" layoutY="245.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="439.0" layoutY="245.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@6947504_thumb.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutY="249.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@6809004_preview.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="465.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@6963845_thumb.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

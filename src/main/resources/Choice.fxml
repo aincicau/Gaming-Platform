@@ -2,18 +2,28 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.fis.student.Controllers.ChoiceController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #9060cc;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.fis.student.Controllers.ChoiceController">
    <children>
-      <Button layoutX="220.0" layoutY="200.0" mnemonicParsing="false" onAction="#actiuneButon1" text="Customer" />
-      <Button layoutX="314.0" layoutY="200.0" mnemonicParsing="false" onAction="#actiuneButon2" text="Administrator" />
-      <Label fx:id="id" layoutX="174.0" layoutY="204.0" text="Role:" />
-      <Label layoutX="212.0" layoutY="99.0" text="Welcome, dear ...">
+      <Button layoutX="220.0" layoutY="200.0" mnemonicParsing="false" onAction="#actiuneButon1" style="-fx-background-color: #000000;" text="Customer" textFill="#fffcfc" />
+      <Button layoutX="314.0" layoutY="200.0" mnemonicParsing="false" onAction="#actiuneButon2" style="-fx-background-color: #000000;" text="Administrator" textFill="WHITE" />
+      <Label fx:id="id" layoutX="163.0" layoutY="204.0" text="Role:">
          <font>
-            <Font size="27.0" />
+            <Font name="OCR A Extended" size="16.0" />
+         </font></Label>
+      <Label layoutX="187.0" layoutY="100.0" text="Welcome, dear ...">
+         <font>
+            <Font name="OCR A Extended" size="27.0" />
          </font>
       </Label>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="200.0" layoutY="299.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@16131_thumb.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
