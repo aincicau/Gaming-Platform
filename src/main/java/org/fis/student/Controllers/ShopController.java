@@ -52,7 +52,6 @@ public class ShopController {
 
         for(Game i:g){
             if(i.equals(ga)){
-                ga.setBought(true);
                 int val = Integer.parseInt(labelCredit.getText());
                 labelCredit.setText(String.valueOf(val - i.getPrice()));
             }
