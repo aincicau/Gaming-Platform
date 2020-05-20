@@ -1,13 +1,21 @@
 package org.fis.student.Models;
 
+import java.util.ArrayList;
+
 public class Customer {
 
     private String ID;
     private String password;
+    private ArrayList<Game> games;
+    private int credit;
 
-    public Customer(String ID, String password) {
+    private boolean logged;
+
+    public Customer(String ID, String password, ArrayList<Game> games, int credit) {
         this.ID = ID;
         this.password = password;
+        this.games = games;
+        this.credit = credit;
     }
 
     public Customer() {
@@ -29,20 +37,48 @@ public class Customer {
         this.password = password;
     }
 
+    public ArrayList<Game> getGames() {
+        return games;
+    }
+
+    public void setGames(ArrayList<Game> games) {
+        this.games = games;
+    }
+
+    public int getCredit() {
+        return credit;
+    }
+
+    public void setCredit(int credit) {
+        this.credit = credit;
+    }
+
+    public boolean isLogged() {
+        return logged;
+    }
+
+    public void setLogged(boolean logged) {
+        this.logged = logged;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Customer customer = (Customer) o;
-        if(!ID.equals(customer.ID))
-            return false;
-        return password.equals(customer.password);
+        if(!ID.equals(customer.ID)) return false;
+        if(!password.equals(customer.password)) return false;
+        if(!games.equals(customer.games)) return false;
+        return credit==customer.credit;
     }
 
     @Override
     public int hashCode() {
         int result=ID.hashCode();
-        return 31*result + password.hashCode();
+        result = 31*result + password.hashCode();
+        result = 31*result + games.hashCode();
+        result = 31*result + credit;
+        return result;
     }
 
     @Override
@@ -50,6 +86,8 @@ public class Customer {
         return "Customer{" +
                 "ID='" + ID + '\'' +
                 ", password='" + password + '\'' +
+                ", games=" + games +
+                ", credit=" + credit +
                 '}';
     }
 }
