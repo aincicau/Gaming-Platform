@@ -28,6 +28,8 @@ public class ShopController {
     @FXML
     private Label labelCredit;
 
+    private Customer current;
+
     @FXML
     public void initialize(){
         tableView.setItems(FXCollections.observableArrayList(GameService.getG()));
@@ -37,20 +39,17 @@ public class ShopController {
         ArrayList<Customer> c = CustomerService.getC();
         for(Customer i:c){
             if(i.isLogged()){
-                labelCredit.setText(String.valueOf(i.getCredit()));
+                current = i;
             }
         }
+
+        labelCredit.setText(String.valueOf(current.getCredit()));
     }
 
     @FXML
     public void logout() {
         try {
-            ArrayList<Customer> c = CustomerService.getC();
-            for(Customer i:c){
-                if(i.isLogged()){
-                    i.setLogged(false);
-                }
-            }
+            current.setLogged(false);
 
             Stage stage = (Stage) logoutButton.getScene().getWindow();
             Parent ceva = FXMLLoader.load(getClass().getClassLoader().getResource("Choice.fxml"));
@@ -63,6 +62,14 @@ public class ShopController {
 
     @FXML
     public void purchaseGame(){
+        ArrayList<Game> currentUserGames = current.getGames();
 
+        Game g = tableView.getSelectionModel().getSelectedItem();
+        currentUserGames.add(g);
+
+        current.setCredit(Integer.parseInt(labelCredit.getText()) - g.getPrice());
+        labelCredit.setText(String.valueOf(current.getCredit()));
+
+        CustomerService.writeCustomers();
     }
 }

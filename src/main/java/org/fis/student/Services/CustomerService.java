@@ -7,6 +7,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.util.*;
 
 public class CustomerService {
@@ -62,5 +63,47 @@ public class CustomerService {
 
     public static ArrayList<Customer> getC() {
         return c;
+    }
+
+    public static void writeCustomers() {
+        FileWriter fw = null;
+        try{
+            fw = new FileWriter("src/main/resources/Customers.json");
+
+            JSONArray ja = new JSONArray();
+
+            for(Customer i:c){
+                JSONObject jo = new JSONObject();
+                jo.put("username",i.getID());
+                jo.put("password",i.getPassword());
+                jo.put("credit",String.valueOf(i.getCredit()));
+
+                JSONArray ja2 = new JSONArray();
+                ArrayList<Game> g = i.getGames();
+
+                for(Game j:g){
+                    JSONObject jo2 = new JSONObject();
+                    jo2.put("name",j.getName());
+                    jo2.put("price",j.getPrice());
+                    ja2.add(jo2);
+                }
+
+                jo.put("games",ja2);
+                ja.add(jo);
+            }
+
+            fw.write(ja.toJSONString());
+
+        }catch(Exception e){
+
+        }finally {
+            try{
+                fw.flush();
+                fw.close();
+            }catch (Exception e){
+                System.out.println(e);
+            }
+
+        }
     }
 }
