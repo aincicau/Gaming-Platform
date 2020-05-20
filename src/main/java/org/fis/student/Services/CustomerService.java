@@ -1,6 +1,7 @@
 package org.fis.student.Services;
 
 import org.fis.student.Models.Customer;
+import org.fis.student.Models.Game;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -20,9 +21,20 @@ public class CustomerService {
 
             for(Object customer:ja){
                 JSONObject o = (JSONObject) customer;
+
                 String id = o.get("username").toString();
                 String pass = o.get("password").toString();
-                c.add(new Customer(id,pass));
+                int credit = Integer.parseInt(o.get("credit").toString());
+                JSONArray ja2 = (JSONArray)o.get("games");
+
+                ArrayList<Game> g = new ArrayList<>();
+
+                for(Object i:ja2){
+                    JSONObject o2 = (JSONObject) i;
+                    g.add(new Game(o2.get("name").toString(), Integer.parseInt(o2.get("price").toString())));
+                }
+
+                c.add(new Customer(id,pass,g,credit));
             }
 
         }catch(Exception e){

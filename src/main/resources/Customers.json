@@ -1,42 +1,62 @@
 [
     {
       "username": "id1",
-      "password": "cGFzczE="
+      "password": "cGFzczE=",
+      "games": [],
+      "credit": 1000
     },
     {
       "username": "id2",
-      "password": "cGFzczI="
+      "password": "cGFzczI=",
+      "games": [],
+      "credit": 1000
     },
     {
       "username": "id3",
-      "password": "cGFzczM="
+      "password": "cGFzczM=",
+      "games": [],
+      "credit": 1000
     },
     {
       "username": "id4",
-      "password": "cGFzczQ="
+      "password": "cGFzczQ=",
+      "games": [],
+      "credit": 1000
     },
     {
       "username": "id5",
-      "password": "cGFzczU="
+      "password": "cGFzczU=",
+      "games": [],
+      "credit": 1000
     },
     {
       "username": "id6",
-      "password": "cGFzczY="
+      "password": "cGFzczY=",
+      "games": [],
+      "credit": 1000
     },
     {
       "username": "id7",
-      "password": "cGFzczc="
+      "password": "cGFzczc=",
+      "games": [],
+      "credit": 1000
     },
     {
       "username": "id8",
-      "password": "cGFzczg="
+      "password": "cGFzczg=",
+      "games": [],
+      "credit": 1000
     },
     {
       "username": "id9",
-      "password": "cGFzczk="
+      "password": "cGFzczk=",
+      "games": [],
+      "credit": 1000
     },
     {
       "username": "id10",
-      "password": "cGFzczEw"
+      "password": "cGFzczEw",
+      "games": [],
+      "credit": 1000
     }
 ]
