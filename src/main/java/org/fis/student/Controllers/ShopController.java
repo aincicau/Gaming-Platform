@@ -21,25 +21,22 @@ public class ShopController {
     private TableColumn<Game,String> nameColumn;
     @FXML
     private TableColumn<Game,Integer> priceColumn;
-    @FXML
-    private TableColumn<Game,Button> purchaseColumn;
 
     @FXML
     public void initialize(){
         tableView.setItems(FXCollections.observableArrayList(GameService.getG()));
         nameColumn.setCellValueFactory(new PropertyValueFactory<Game,String>("name"));
         priceColumn.setCellValueFactory(new PropertyValueFactory<Game,Integer>("price"));
-        purchaseColumn.setCellValueFactory(new PropertyValueFactory<Game,Button>("purchase buton"));
     }
 
     @FXML
-    public void logout(){
-        try{
-            Stage stage=(Stage)logoutButton.getScene().getWindow();
+    public void logout() {
+        try {
+            Stage stage = (Stage) logoutButton.getScene().getWindow();
             Parent ceva = FXMLLoader.load(getClass().getClassLoader().getResource("Choice.fxml"));
             stage.setTitle("Choice");
-            stage.setScene(new Scene(ceva,600,600));
-        }catch (Exception e){
+            stage.setScene(new Scene(ceva, 600, 600));
+        } catch (Exception e) {
             System.out.println(e);
         }
     }
