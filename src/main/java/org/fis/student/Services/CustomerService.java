@@ -59,4 +59,8 @@ public class CustomerService {
 
         return result;
     }
+
+    public static ArrayList<Customer> getC() {
+        return c;
+    }
 }

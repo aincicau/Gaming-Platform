@@ -9,6 +9,8 @@ public class Customer {
     private ArrayList<Game> games;
     private int credit;
 
+    private boolean logged;
+
     public Customer(String ID, String password, ArrayList<Game> games, int credit) {
         this.ID = ID;
         this.password = password;
@@ -49,6 +51,14 @@ public class Customer {
 
     public void setCredit(int credit) {
         this.credit = credit;
+    }
+
+    public boolean isLogged() {
+        return logged;
+    }
+
+    public void setLogged(boolean logged) {
+        this.logged = logged;
     }
 
     @Override

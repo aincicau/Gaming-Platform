@@ -9,9 +9,11 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import org.fis.student.Exceptions.IncorrectCustomer;
+import org.fis.student.Models.Customer;
 import org.fis.student.Services.CustomerService;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class CustomerController {
     @FXML
@@ -42,6 +44,13 @@ public class CustomerController {
         try {
             if (CustomerService.checkCredentials(fieldID.getText(), CustomerService.encodePassword(fieldPass.getText()))){
                 try{
+                    ArrayList<Customer> c = CustomerService.getC();
+                    for(Customer i:c){
+                        if(fieldID.getText().equals(i.getID())){
+                            i.setLogged(true);
+                        }
+                    }
+
                     Stage stage=(Stage)id.getScene().getWindow();
                     Parent ceva = FXMLLoader.load(getClass().getClassLoader().getResource("ShopPage.fxml"));
                     stage.setTitle("Shop Page");
