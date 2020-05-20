@@ -8,6 +8,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import org.fis.student.Exceptions.GameAlreadyPurchased;
+import org.fis.student.Exceptions.InsufficientCredits;
 import org.fis.student.Models.Customer;
 import org.fis.student.Models.Game;
 import org.fis.student.Services.CustomerService;
@@ -65,10 +67,31 @@ public class ShopController {
         ArrayList<Game> currentUserGames = current.getGames();
 
         Game g = tableView.getSelectionModel().getSelectedItem();
-        currentUserGames.add(g);
 
-        current.setCredit(Integer.parseInt(labelCredit.getText()) - g.getPrice());
-        labelCredit.setText(String.valueOf(current.getCredit()));
+        boolean flag = false;
+        for(Game i:currentUserGames) {
+            if (g.equals(i)){
+                flag = true;
+            }
+        }
+
+        try{
+            if(!flag) {
+                if(current.getCredit()-g.getPrice()>=0) {
+                    current.setCredit(Integer.parseInt(labelCredit.getText()) - g.getPrice());
+                    labelCredit.setText(String.valueOf(current.getCredit()));
+                    currentUserGames.add(g);
+                }
+                else{
+                    throw new InsufficientCredits();
+                }
+            }
+            else{
+                throw new GameAlreadyPurchased();
+            }
+        }catch (Exception e){
+            System.out.println(e);
+        }
 
         CustomerService.writeCustomers();
     }
