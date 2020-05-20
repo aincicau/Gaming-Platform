@@ -12,6 +12,8 @@ import org.fis.student.Models.Game;
 import org.fis.student.Services.GameService;
 import javafx.collections.FXCollections;
 
+import java.util.ArrayList;
+
 public class ShopController {
     @FXML
     private Button logoutButton;
@@ -21,6 +23,8 @@ public class ShopController {
     private TableColumn<Game,String> nameColumn;
     @FXML
     private TableColumn<Game,Integer> priceColumn;
+    @FXML
+    private Label labelCredit;
 
     @FXML
     public void initialize(){
@@ -38,6 +42,20 @@ public class ShopController {
             stage.setScene(new Scene(ceva, 600, 600));
         } catch (Exception e) {
             System.out.println(e);
+        }
+    }
+
+    @FXML
+    public void purchaseGame(){
+        ArrayList<Game> g = GameService.getG();
+        Game ga = tableView.getSelectionModel().getSelectedItem();
+
+        for(Game i:g){
+            if(i.equals(ga)){
+                ga.setBought(true);
+                int val = Integer.parseInt(labelCredit.getText());
+                labelCredit.setText(String.valueOf(val - i.getPrice()));
+            }
         }
     }
 }
