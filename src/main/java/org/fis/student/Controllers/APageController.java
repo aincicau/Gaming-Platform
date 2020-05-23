@@ -58,4 +58,16 @@ public class APageController {
             System.out.println(e);
         }
     }
+
+    @FXML
+    public void addButton(){
+        try {
+            Stage stage = (Stage) logButton.getScene().getWindow();
+            Parent ceva = FXMLLoader.load(getClass().getClassLoader().getResource("AddGame.fxml"));
+            stage.setTitle("Add Game Screen");
+            stage.setScene(new Scene(ceva, 600, 600));
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
 }
