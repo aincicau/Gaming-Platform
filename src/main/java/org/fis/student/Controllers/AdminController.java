@@ -13,6 +13,7 @@ import org.fis.student.Models.Admin;
 import org.fis.student.Services.AdminService;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class AdminController {
     @FXML
@@ -40,8 +41,23 @@ public class AdminController {
     @FXML
     public void butonLogin(){
         try {
-            if (AdminService.checkCredentials(fieldID.getText(), AdminService.encodePassword(fieldPass.getText())))
-                System.out.println("te duce la admin page");
+            if (AdminService.checkCredentials(fieldID.getText(), AdminService.encodePassword(fieldPass.getText()))) {
+                try{
+                    ArrayList<Admin> ad = AdminService.getA();
+                    for(Admin i:ad){
+                        if(fieldID.getText().equals(i.getUsername())){
+                            i.setLogged(true);
+                        }
+                    }
+
+                    Stage stage=(Stage)id.getScene().getWindow();
+                    Parent ceva = FXMLLoader.load(getClass().getClassLoader().getResource("AdminPage.fxml"));
+                    stage.setTitle("Administration Page");
+                    stage.setScene(new Scene(ceva,600,600));
+                }catch (Exception e){
+                    System.out.println(e);
+                }
+            }
             else
                 throw new IncorrectAdmin();
         }catch (IncorrectAdmin e){

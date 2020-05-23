@@ -9,18 +9,17 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #9060cc;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #9060cc;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.fis.student.Controllers.APageController">
    <children>
       <Label layoutX="161.0" layoutY="42.0" text="Administration Page">
          <font>
             <Font name="OCR A Extended" size="27.0" />
          </font>
       </Label>
-      <TableView layoutX="140.0" layoutY="112.0" prefHeight="200.0" prefWidth="320.0" style="-fx-background-color: #aea1c7;">
+      <TableView fx:id="tableView" layoutX="140.0" layoutY="112.0" prefHeight="200.0" prefWidth="320.0" style="-fx-background-color: #aea1c7;">
         <columns>
-          <TableColumn prefWidth="194.66669464111328" text="Name" />
-          <TableColumn prefWidth="123.33334350585938" text="Price" />
+          <TableColumn fx:id="nameColumn" prefWidth="194.66669464111328" text="Name" />
+          <TableColumn fx:id="priceColumn" prefWidth="123.33334350585938" text="Price" />
         </columns>
       </TableView>
       <Button layoutX="512.0" layoutY="112.0" mnemonicParsing="false" style="-fx-background-color: #000000;" text="+" textFill="WHITE" />
@@ -36,6 +35,6 @@
             <Image url="@6978055_thumb.png" />
          </image>
       </ImageView>
-      <Button layoutX="14.0" layoutY="23.0" mnemonicParsing="false" style="-fx-background-color: #000000;" text="Log out" textFill="WHITE" />
+      <Button fx:id="logButton" layoutX="14.0" layoutY="23.0" mnemonicParsing="false" onAction="#logOut" style="-fx-background-color: #000000;" text="Log out" textFill="WHITE" />
    </children>
 </AnchorPane>
