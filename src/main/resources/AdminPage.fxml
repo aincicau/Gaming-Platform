@@ -19,18 +19,17 @@
         </columns>
       </TableView>
       <Button layoutX="512.0" layoutY="112.0" mnemonicParsing="false" onAction="#addButton" style="-fx-background-color: #000000;" text="+" textFill="WHITE" />
-      <Button layoutX="512.0" layoutY="353.0" mnemonicParsing="false" style="-fx-background-color: #000000;" text="Delete" textFill="WHITE" />
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutY="112.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fitHeight="348.0" fitWidth="310.0" layoutX="-15.0" layoutY="7.0" opacity="0.75" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@6978055_thumb.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="230.0" fitWidth="220.0" layoutX="371.0" layoutY="169.0" opacity="0.75" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@6978055_thumb.png" />
-         </image>
-      </ImageView>
+      <Button layoutX="512.0" layoutY="353.0" mnemonicParsing="false" onAction="#deleteButton" style="-fx-background-color: #000000;" text="Delete" textFill="WHITE" />
       <Button fx:id="logButton" layoutX="14.0" layoutY="23.0" mnemonicParsing="false" onAction="#logOut" style="-fx-background-color: #000000;" text="Log out" textFill="WHITE" />
+      <ImageView disable="true" fitHeight="230.0" fitWidth="220.0" layoutX="371.0" layoutY="169.0" opacity="0.75" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@6978055_thumb.png" />
+         </image>
+      </ImageView>
+      <ImageView disable="true" fitHeight="348.0" fitWidth="310.0" opacity="0.75" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@6978055_thumb.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

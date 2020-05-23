@@ -71,4 +71,22 @@ public class APageController {
             System.out.println(e);
         }
     }
+
+    @FXML
+    public void deleteButton(){
+        Game x = tableView.getSelectionModel().getSelectedItem();
+
+        ArrayList<Game> g = GameService.getG();
+
+        for(Game i:g){
+            if(i.equals(x)){
+                x = i;
+            }
+        }
+
+        g.remove(x);
+        GameService.writeGames();
+
+        this.initialize();
+    }
 }
