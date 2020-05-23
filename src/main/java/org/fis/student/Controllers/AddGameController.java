@@ -6,6 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import org.fis.student.Exceptions.GameAlreadyExists;
 import org.fis.student.Models.Game;
 import org.fis.student.Services.GameService;
 
@@ -41,11 +42,15 @@ public class AddGameController {
             }
         }
 
+        try{
         if(flag){
-            //exceptie
+            throw new GameAlreadyExists();
         }else{
             g.add(new Game(nameField.getText(),Integer.parseInt(priceField.getText())));
             GameService.writeGames();
+        }
+        }catch (Exception e){
+            System.out.println(e);
         }
     }
 }
