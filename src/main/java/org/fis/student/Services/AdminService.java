@@ -51,4 +51,8 @@ public class AdminService {
 
         return result;
     }
+
+    public static ArrayList<Admin> getA() {
+        return a;
+    }
 }
