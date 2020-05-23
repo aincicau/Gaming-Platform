@@ -5,9 +5,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #9060cc;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #9060cc;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.fis.student.Controllers.AddGameController">
    <children>
-      <Button layoutX="33.0" layoutY="31.0" mnemonicParsing="false" style="-fx-background-color: #000000;" text="Back" textFill="WHITE" />
+      <Button layoutX="33.0" layoutY="31.0" mnemonicParsing="false" onAction="#backButton" style="-fx-background-color: #000000;" text="Back" textFill="WHITE" />
       <Label layoutX="53.0" layoutY="80.0" text="Let the adventure begin">
          <font>
             <Font name="OCR A Extended" size="27.0" />
@@ -23,9 +23,9 @@
             <Font name="OCR A Extended" size="27.0" />
          </font>
       </Label>
-      <TextField layoutX="192.0" layoutY="131.0" />
-      <TextField layoutX="192.0" layoutY="173.0" />
-      <Button layoutX="192.0" layoutY="224.0" mnemonicParsing="false" style="-fx-background-color: #000000;" text="Add" textFill="WHITE" />
+      <TextField fx:id="nameField" layoutX="192.0" layoutY="131.0" />
+      <TextField fx:id="priceField" layoutX="192.0" layoutY="173.0" />
+      <Button layoutX="192.0" layoutY="224.0" mnemonicParsing="false" onAction="#addButton" style="-fx-background-color: #000000;" text="Add" textFill="WHITE" />
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="42.0" layoutY="237.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@6962782_thumb.png" />

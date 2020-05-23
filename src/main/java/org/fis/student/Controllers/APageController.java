@@ -33,6 +33,7 @@ public class APageController {
 
     @FXML
     public void initialize(){
+        GameService.loadGames();
         tableView.setItems(FXCollections.observableArrayList(GameService.getG()));
         nameColumn.setCellValueFactory(new PropertyValueFactory<Game,String>("name"));
         priceColumn.setCellValueFactory(new PropertyValueFactory<Game,Integer>("price"));
