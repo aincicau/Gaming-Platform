@@ -5,6 +5,7 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
+import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.ArrayList;
@@ -14,6 +15,7 @@ public class GameService {
 
     public static void loadGames() {
         try {
+            g=new ArrayList<>();
             JSONParser jp = new JSONParser();
             FileReader fr = new FileReader("src/main/resources/Games.json");
             Object obj = jp.parse(fr);
@@ -30,5 +32,33 @@ public class GameService {
 
     public static ArrayList<Game> getG() {
         return g;
+    }
+
+    public static void writeGames(){
+        FileWriter fw = null;
+        try{
+            fw = new FileWriter("src/main/resources/Games.json");
+
+            JSONArray ja = new JSONArray();
+
+            for(Game i:g){
+                JSONObject jo = new JSONObject();
+                jo.put("name",i.getName());
+                jo.put("price",String.valueOf(i.getPrice()));
+
+                ja.add(jo);
+            }
+
+            fw.write(ja.toJSONString());
+        }catch(Exception e){
+            System.out.println(e);
+        }finally {
+            try{
+                fw.flush();
+                fw.close();
+            }catch (Exception e){
+                System.out.println(e);
+            }
+        }
     }
 }

@@ -33,6 +33,7 @@ public class APageController {
 
     @FXML
     public void initialize(){
+        GameService.loadGames();
         tableView.setItems(FXCollections.observableArrayList(GameService.getG()));
         nameColumn.setCellValueFactory(new PropertyValueFactory<Game,String>("name"));
         priceColumn.setCellValueFactory(new PropertyValueFactory<Game,Integer>("price"));
@@ -53,6 +54,18 @@ public class APageController {
             Stage stage = (Stage) logButton.getScene().getWindow();
             Parent ceva = FXMLLoader.load(getClass().getClassLoader().getResource("Choice.fxml"));
             stage.setTitle("Choice");
+            stage.setScene(new Scene(ceva, 600, 600));
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+
+    @FXML
+    public void addButton(){
+        try {
+            Stage stage = (Stage) logButton.getScene().getWindow();
+            Parent ceva = FXMLLoader.load(getClass().getClassLoader().getResource("AddGame.fxml"));
+            stage.setTitle("Add Game Screen");
             stage.setScene(new Scene(ceva, 600, 600));
         } catch (Exception e) {
             System.out.println(e);
