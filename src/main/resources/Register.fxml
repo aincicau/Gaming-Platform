@@ -7,12 +7,11 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.fis.student.Controllers.RegisterController">
    <children>
       <Button layoutX="14.0" layoutY="24.0" mnemonicParsing="false" onAction="#backButton" text="Back" />
-      <TextField fx:id="idLabel" layoutX="195.0" layoutY="126.0" />
-      <PasswordField fx:id="passwordLabel" layoutX="195.0" layoutY="165.0" />
+      <TextField fx:id="idField" layoutX="195.0" layoutY="126.0" />
+      <PasswordField fx:id="passwordField" layoutX="195.0" layoutY="165.0" />
       <ChoiceBox fx:id="role" layoutX="194.0" layoutY="205.0" prefWidth="150.0" />
       <Button layoutX="257.0" layoutY="291.0" mnemonicParsing="false" onAction="#register" text="Register" />
       <Label layoutX="112.0" layoutY="130.0" text="Username:" />

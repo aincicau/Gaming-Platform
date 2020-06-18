@@ -8,8 +8,14 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import org.fis.student.Models.Admin;
+import org.fis.student.Models.Customer;
+import org.fis.student.Models.Game;
+import org.fis.student.Services.AdminService;
+import org.fis.student.Services.CustomerService;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class RegisterController {
     @FXML
@@ -18,6 +24,11 @@ public class RegisterController {
     private PasswordField passwordField;
     @FXML
     private ChoiceBox role;
+
+    public void initialize(){
+        role.getItems().addAll("Customer", "Admin");
+        role.setValue("Customer");
+    }
 
     public void backButton(){
         try
@@ -33,6 +44,15 @@ public class RegisterController {
     }
 
     public void register(){
+        String id = idField.getText();
+        String pass = passwordField.getText();
 
+        if(role.getValue().equals("Customer")){
+            CustomerService.getC().add(new Customer(id, CustomerService.encodePassword(pass), new ArrayList<Game>(), 1000));
+            CustomerService.writeCustomers();
+        }else{
+            AdminService.getA().add(new Admin(id, AdminService.encodePassword(pass)));
+            AdminService.writeAdmins();
+        }
     }
 }
