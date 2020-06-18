@@ -17,5 +17,6 @@
       <Label layoutX="112.0" layoutY="130.0" text="Username:" />
       <Label layoutX="112.0" layoutY="169.0" text="Password:" />
       <Label layoutX="112.0" layoutY="209.0" text="Role:" />
+      <Label fx:id="alertLabel" layoutX="218.0" layoutY="65.0" text="User already exists!" />
    </children>
 </AnchorPane>
