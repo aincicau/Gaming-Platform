@@ -42,4 +42,18 @@ public class ChoiceController {
             System.out.println(e);
         }
     }
+
+    @FXML
+    public void registerButton(){
+        try
+        {
+            Stage stage=(Stage)id.getScene().getWindow();
+            Parent ceva = FXMLLoader.load(getClass().getClassLoader().getResource("Register.fxml"));
+            stage.setTitle("Register");
+            stage.setScene(new Scene(ceva,600,600));
+
+        }catch(IOException e) {
+            System.out.println(e);
+        }
+    }
 }

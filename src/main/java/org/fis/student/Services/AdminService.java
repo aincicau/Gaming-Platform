@@ -6,9 +6,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 import java.io.FileReader;
-import java.nio.charset.StandardCharsets;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
+import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.Base64;
 
@@ -50,6 +48,36 @@ public class AdminService {
         String result = Base64.getEncoder().encodeToString(password.getBytes());
 
         return result;
+    }
+
+    public static void writeAdmins() {
+        FileWriter fw = null;
+        try{
+            fw = new FileWriter("src/main/resources/Admins.json");
+
+            JSONArray ja = new JSONArray();
+
+            for(Admin i:a){
+                JSONObject jo = new JSONObject();
+                jo.put("username",i.getUsername());
+                jo.put("password",i.getPassword());
+
+                ja.add(jo);
+            }
+
+            fw.write(ja.toJSONString());
+
+        }catch(Exception e){
+
+        }finally {
+            try{
+                fw.flush();
+                fw.close();
+            }catch (Exception e){
+                System.out.println(e);
+            }
+
+        }
     }
 
     public static ArrayList<Admin> getA() {
