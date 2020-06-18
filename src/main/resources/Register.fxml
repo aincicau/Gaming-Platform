@@ -6,17 +6,27 @@
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.fis.student.Controllers.RegisterController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #9060cc;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.fis.student.Controllers.RegisterController">
    <children>
-      <Button layoutX="14.0" layoutY="24.0" mnemonicParsing="false" onAction="#backButton" text="Back" />
-      <TextField fx:id="idField" layoutX="195.0" layoutY="126.0" />
-      <PasswordField fx:id="passwordField" layoutX="195.0" layoutY="165.0" />
-      <ChoiceBox fx:id="role" layoutX="194.0" layoutY="205.0" prefWidth="150.0" />
-      <Button layoutX="257.0" layoutY="291.0" mnemonicParsing="false" onAction="#register" text="Register" />
-      <Label layoutX="112.0" layoutY="130.0" text="Username:" />
-      <Label layoutX="112.0" layoutY="169.0" text="Password:" />
-      <Label layoutX="112.0" layoutY="209.0" text="Role:" />
-      <Label fx:id="alertLabel" layoutX="218.0" layoutY="65.0" text="User already exists!" />
+      <Button layoutX="14.0" layoutY="24.0" mnemonicParsing="false" onAction="#backButton" style="-fx-background-color: #000000;" text="Back" textFill="WHITE" />
+      <TextField fx:id="idField" layoutX="212.0" layoutY="127.0" />
+      <PasswordField fx:id="passwordField" layoutX="212.0" layoutY="165.0" />
+      <ChoiceBox fx:id="role" layoutX="211.0" layoutY="206.0" prefWidth="150.0" />
+      <Button layoutX="257.0" layoutY="291.0" mnemonicParsing="false" onAction="#register" style="-fx-background-color: #000000;" text="Register" textFill="WHITE" />
+      <Label layoutX="112.0" layoutY="130.0" text="Username:">
+         <font>
+            <Font name="OCR A Extended" size="17.0" />
+         </font></Label>
+      <Label layoutX="112.0" layoutY="169.0" text="Password:">
+         <font>
+            <Font name="OCR A Extended" size="17.0" />
+         </font></Label>
+      <Label layoutX="112.0" layoutY="209.0" text="Role:">
+         <font>
+            <Font name="OCR A Extended" size="17.0" />
+         </font></Label>
+      <Label fx:id="alertLabel" layoutX="236.0" layoutY="65.0" text="User already exists!" />
    </children>
 </AnchorPane>
