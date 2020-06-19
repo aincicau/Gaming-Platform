@@ -11,12 +11,13 @@ import java.util.ArrayList;
 import java.util.Base64;
 
 public class AdminService {
+    private static String path = null;
     private static ArrayList<Admin> a = new ArrayList<>();
 
     public static void loadAdmins(){
         try{
             JSONParser jp = new JSONParser();
-            FileReader fr = new FileReader("src/main/resources/Admins.json");
+            FileReader fr = new FileReader(path);
             Object obj = jp.parse(fr);
             JSONArray ja = (JSONArray)obj;
 
@@ -53,7 +54,7 @@ public class AdminService {
     public static void writeAdmins() {
         FileWriter fw = null;
         try{
-            fw = new FileWriter("src/main/resources/Admins.json");
+            fw = new FileWriter(path);
 
             JSONArray ja = new JSONArray();
 
@@ -82,5 +83,9 @@ public class AdminService {
 
     public static ArrayList<Admin> getA() {
         return a;
+    }
+
+    public static void setPath(String path) {
+        AdminService.path = path;
     }
 }
