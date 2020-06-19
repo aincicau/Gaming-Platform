@@ -2,7 +2,6 @@ package org.fis.student.Controllers;
 
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import org.apache.commons.io.FileUtils;
 import org.fis.student.Models.Customer;
 import org.fis.student.Services.CustomerService;
 import org.junit.Before;
@@ -21,10 +20,14 @@ public class CustomerControllerTest extends ApplicationTest {
 
     private CustomerController controller;
 
-    @Before
-    public void setUp() throws Exception{
+    @BeforeClass
+    public static void setupClass(){
+        CustomerService.setPath("src/main/resources/Customers.json");
         CustomerService.loadCustomers();
+    }
 
+    @Before
+    public void setUp(){
         controller = new CustomerController();
         controller.fieldID = new TextField();
         controller.fieldPass = new PasswordField();
