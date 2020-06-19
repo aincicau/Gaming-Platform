@@ -17,11 +17,11 @@ import java.util.ArrayList;
 
 public class AdminController {
     @FXML
-    private Label id;
+    Label id;
     @FXML
-    private TextField fieldID;
+    TextField fieldID;
     @FXML
-    private PasswordField fieldPass;
+    PasswordField fieldPass;
 
     @FXML
     public void butonBack()
