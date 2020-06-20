@@ -78,20 +78,21 @@ public class ShopController {
             }
         }
 
-        try{
-            if(!flag) {
-                if(current.getCredit()-g.getPrice()>=0) {
+        try {
+            if (!flag) {
+                if (current.getCredit() - g.getPrice() >= 0) {
                     current.setCredit(Integer.parseInt(labelCredit.getText()) - g.getPrice());
                     labelCredit.setText(String.valueOf(current.getCredit()));
                     currentUserGames.add(g);
-                }
-                else{
+                    alertLabel.setText("");
+                } else {
                     throw new InsufficientCredits();
                 }
-            }
-            else{
+            } else {
                 throw new GameAlreadyPurchased();
             }
+        }catch (InsufficientCredits e){
+            alertLabel.setText("Insufficient credits!");
         }catch (Exception e){
             alertLabel.setText("Game already bought!");
         }
