@@ -88,4 +88,8 @@ public class AdminService {
     public static void setPath(String path) {
         AdminService.path = path;
     }
+
+    public static void setA(ArrayList<Admin> a) {
+        AdminService.a = a;
+    }
 }

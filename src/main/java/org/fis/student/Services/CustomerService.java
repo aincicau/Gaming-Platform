@@ -111,4 +111,8 @@ public class CustomerService {
     public static void setPath(String path) {
         CustomerService.path = path;
     }
+
+    public static void setC(ArrayList<Customer> c) {
+        CustomerService.c = c;
+    }
 }
