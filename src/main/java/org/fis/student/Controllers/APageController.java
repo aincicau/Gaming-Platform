@@ -11,10 +11,8 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import org.fis.student.Models.Admin;
-import org.fis.student.Models.Customer;
 import org.fis.student.Models.Game;
 import org.fis.student.Services.AdminService;
-import org.fis.student.Services.CustomerService;
 import org.fis.student.Services.GameService;
 
 import java.util.ArrayList;

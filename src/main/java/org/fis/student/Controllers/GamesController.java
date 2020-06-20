@@ -11,10 +11,6 @@ import javafx.stage.Stage;
 import org.fis.student.Models.Customer;
 import org.fis.student.Models.Game;
 import org.fis.student.Services.CustomerService;
-import org.fis.student.Services.GameService;
-
-import javax.swing.table.TableCellEditor;
-import javax.swing.text.TableView;
 import java.util.ArrayList;
 
 public class GamesController {
