@@ -22,6 +22,13 @@ public class CustomerController {
     TextField fieldID;
     @FXML
     PasswordField fieldPass;
+    @FXML
+    Label alertLabel;
+
+    @FXML
+    public void initialize(){
+        alertLabel.setText("");
+    }
 
     @FXML
     public void butonBack()
@@ -62,7 +69,7 @@ public class CustomerController {
             else
                 throw new IncorrectCustomer();
         }catch (IncorrectCustomer e){
-            System.out.println(e);
+            alertLabel.setText("Incorrect data!");
         }
     }
 }

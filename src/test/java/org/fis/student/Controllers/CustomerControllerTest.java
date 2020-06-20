@@ -1,5 +1,6 @@
 package org.fis.student.Controllers;
 
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import org.fis.student.Models.Customer;
@@ -33,6 +34,7 @@ public class CustomerControllerTest extends ApplicationTest {
         controller = new CustomerController();
         controller.fieldID = new TextField();
         controller.fieldPass = new PasswordField();
+        controller.alertLabel = new Label();
     }
 
     @Test
