@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #9060cc;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.fis.student.Controllers.ChoiceController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #9060cc;" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.fis.student.Controllers.ChoiceController">
    <children>
       <Button layoutX="220.0" layoutY="200.0" mnemonicParsing="false" onAction="#actiuneButon1" style="-fx-background-color: #000000;" text="Customer" textFill="#fffcfc" />
       <Button layoutX="314.0" layoutY="200.0" mnemonicParsing="false" onAction="#actiuneButon2" style="-fx-background-color: #000000;" text="Administrator" textFill="WHITE" />
