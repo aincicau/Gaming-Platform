@@ -22,6 +22,13 @@ public class AdminController {
     TextField fieldID;
     @FXML
     PasswordField fieldPass;
+    @FXML
+    Label alertLabel;
+
+    @FXML
+    public void initialize(){
+        alertLabel.setText("");
+    }
 
     @FXML
     public void butonBack()
@@ -61,7 +68,7 @@ public class AdminController {
             else
                 throw new IncorrectAdmin();
         }catch (IncorrectAdmin e){
-            System.out.println(e);
+            alertLabel.setText("Incorrect data!");
         }
     }
 }

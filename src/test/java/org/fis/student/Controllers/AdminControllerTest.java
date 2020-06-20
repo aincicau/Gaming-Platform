@@ -37,6 +37,7 @@ public class AdminControllerTest extends ApplicationTest {
         controller.fieldID = new TextField();
         controller.fieldPass = new PasswordField();
         controller.id = new Label();
+        controller.alertLabel = new Label();
     }
 
     @Test
