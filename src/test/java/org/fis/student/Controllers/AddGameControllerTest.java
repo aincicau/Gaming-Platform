@@ -1,7 +1,7 @@
 package org.fis.student.Controllers;
 
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import org.fis.student.Models.Game;
 import org.fis.student.Services.GameService;
 import org.junit.After;
 import org.junit.Before;
@@ -25,6 +25,7 @@ public class AddGameControllerTest extends ApplicationTest {
         controller = new AddGameController();
         controller.nameField = new TextField();
         controller.priceField = new TextField();
+        controller.alertLabel = new Label();
     }
 
     @Test

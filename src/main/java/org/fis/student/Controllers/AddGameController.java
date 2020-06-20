@@ -4,13 +4,13 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import org.fis.student.Exceptions.GameAlreadyExists;
 import org.fis.student.Models.Game;
 import org.fis.student.Services.GameService;
 
-import javax.xml.soap.Text;
 import java.util.ArrayList;
 
 public class AddGameController {
@@ -18,6 +18,13 @@ public class AddGameController {
     TextField nameField;
     @FXML
     TextField priceField;
+    @FXML
+    Label alertLabel;
+
+    @FXML
+    public void initialize(){
+        alertLabel.setText("");
+    }
 
     @FXML
     public void backButton(){
@@ -50,7 +57,7 @@ public class AddGameController {
             GameService.writeGames();
         }
         }catch (Exception e){
-            System.out.println(e);
+            alertLabel.setText("Game already exists!");
         }
     }
 }
