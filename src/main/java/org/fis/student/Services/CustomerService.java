@@ -11,12 +11,13 @@ import java.io.FileWriter;
 import java.util.*;
 
 public class CustomerService {
+    private static String path = null;
     private static ArrayList<Customer> c = new ArrayList<>();
 
     public static void loadCustomers(){
         try{
             JSONParser jp = new JSONParser();
-            FileReader fr = new FileReader("src/main/resources/Customers.json");
+            FileReader fr = new FileReader(path);
             Object obj = jp.parse(fr);
             JSONArray ja = (JSONArray)obj;
 
@@ -68,7 +69,7 @@ public class CustomerService {
     public static void writeCustomers() {
         FileWriter fw = null;
         try{
-            fw = new FileWriter("src/main/resources/Customers.json");
+            fw = new FileWriter(path);
 
             JSONArray ja = new JSONArray();
 
@@ -105,5 +106,9 @@ public class CustomerService {
             }
 
         }
+    }
+
+    public static void setPath(String path) {
+        CustomerService.path = path;
     }
 }

@@ -15,9 +15,9 @@ import java.util.ArrayList;
 
 public class AddGameController {
     @FXML
-    private TextField nameField;
+    TextField nameField;
     @FXML
-    private TextField priceField;
+    TextField priceField;
 
     @FXML
     public void backButton(){

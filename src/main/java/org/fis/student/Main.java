@@ -17,8 +17,11 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+        CustomerService.setPath("src/main/resources/Customers.json");
         CustomerService.loadCustomers();
+        AdminService.setPath("src/main/resources/Admins.json");
         AdminService.loadAdmins();
+        GameService.setPath("src/main/resources/Games.json");
         GameService.loadGames();
 
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Choice.fxml"));

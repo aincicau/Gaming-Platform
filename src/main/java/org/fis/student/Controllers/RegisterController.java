@@ -22,13 +22,13 @@ import java.util.ArrayList;
 
 public class RegisterController {
     @FXML
-    private TextField idField;
+    TextField idField;
     @FXML
-    private PasswordField passwordField;
+    PasswordField passwordField;
     @FXML
-    private ChoiceBox role;
+    ChoiceBox role;
     @FXML
-    private Label alertLabel;
+    Label alertLabel;
 
     public void initialize(){
         role.getItems().addAll("Customer", "Admin");

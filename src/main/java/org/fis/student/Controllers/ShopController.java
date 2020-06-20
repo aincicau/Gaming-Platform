@@ -20,17 +20,17 @@ import java.util.ArrayList;
 
 public class ShopController {
     @FXML
-    private Button logoutButton;
+    Button logoutButton;
     @FXML
-    private TableView<Game> tableView;
+    TableView<Game> tableView;
     @FXML
-    private TableColumn<Game,String> nameColumn;
+    TableColumn<Game,String> nameColumn;
     @FXML
-    private TableColumn<Game,Integer> priceColumn;
+    TableColumn<Game,Integer> priceColumn;
     @FXML
-    private Label labelCredit;
+    Label labelCredit;
 
-    private Customer current;
+    Customer current;
 
     @FXML
     public void initialize(){

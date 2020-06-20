@@ -21,15 +21,15 @@ import java.util.ArrayList;
 
 public class APageController {
     @FXML
-    private Button logButton;
+    Button logButton;
     @FXML
-    private TableView<Game> tableView;
+    TableView<Game> tableView;
     @FXML
-    private TableColumn<Game,String> nameColumn;
+    TableColumn<Game,String> nameColumn;
     @FXML
-    private TableColumn<Game,Integer> priceColumn;
+    TableColumn<Game,Integer> priceColumn;
 
-    private Admin current;
+    Admin current;
 
     @FXML
     public void initialize(){
