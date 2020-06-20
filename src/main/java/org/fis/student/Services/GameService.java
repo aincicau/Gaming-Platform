@@ -66,4 +66,8 @@ public class GameService {
     public static void setPath(String path) {
         GameService.path = path;
     }
+
+    public static void setG(ArrayList<Game> g) {
+        GameService.g = g;
+    }
 }
