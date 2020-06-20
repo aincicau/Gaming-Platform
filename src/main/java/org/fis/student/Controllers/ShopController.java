@@ -54,9 +54,9 @@ public class ShopController {
             current.setLogged(false);
 
             Stage stage = (Stage) logoutButton.getScene().getWindow();
-            Parent ceva = FXMLLoader.load(getClass().getClassLoader().getResource("Choice.fxml"));
+            Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Choice.fxml"));
             stage.setTitle("Choice");
-            stage.setScene(new Scene(ceva, 600, 600));
+            stage.setScene(new Scene(root, 600, 600));
         } catch (Exception e) {
             System.out.println(e);
         }
@@ -100,9 +100,9 @@ public class ShopController {
     public void myGames(){
         try{
             Stage stage=(Stage)tableView.getScene().getWindow();
-            Parent ceva = FXMLLoader.load(getClass().getClassLoader().getResource("MyGames.fxml"));
+            Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("MyGames.fxml"));
             stage.setTitle("My Games");
-            stage.setScene(new Scene(ceva,600,600));
+            stage.setScene(new Scene(root,600,600));
         }catch (Exception e){
             System.out.println(e);
         }

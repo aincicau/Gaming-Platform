@@ -40,9 +40,9 @@ public class RegisterController {
         try
         {
             Stage stage=(Stage)role.getScene().getWindow();
-            Parent ceva = FXMLLoader.load(getClass().getClassLoader().getResource("Choice.fxml"));
+            Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Choice.fxml"));
             stage.setTitle("Choice");
-            stage.setScene(new Scene(ceva,600,600));
+            stage.setScene(new Scene(root,600,600));
 
         }catch(IOException e) {
             alertLabel.setText("User already exists!");
@@ -67,9 +67,9 @@ public class RegisterController {
                 try
                 {
                     Stage stage=(Stage)idField.getScene().getWindow();
-                    Parent ceva = FXMLLoader.load(getClass().getClassLoader().getResource("LoginCustomer.fxml"));
+                    Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("LoginCustomer.fxml"));
                     stage.setTitle("Login Customer");
-                    stage.setScene(new Scene(ceva,600,600));
+                    stage.setScene(new Scene(root,600,600));
 
                 }catch(IOException e) {
                     System.out.println(e);
@@ -92,9 +92,9 @@ public class RegisterController {
                 try
                 {
                     Stage stage=(Stage)idField.getScene().getWindow();
-                    Parent ceva = FXMLLoader.load(getClass().getClassLoader().getResource("LoginAdmin.fxml"));
+                    Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("LoginAdmin.fxml"));
                     stage.setTitle("Login Administrator");
-                    stage.setScene(new Scene(ceva,600,600));
+                    stage.setScene(new Scene(root,600,600));
 
                 }catch(IOException e) {
                     System.out.println(e);

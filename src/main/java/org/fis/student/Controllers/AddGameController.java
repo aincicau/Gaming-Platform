@@ -23,9 +23,9 @@ public class AddGameController {
     public void backButton(){
         try{
             Stage stage = (Stage) nameField.getScene().getWindow();
-            Parent ceva = FXMLLoader.load(getClass().getClassLoader().getResource("AdminPage.fxml"));
+            Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("AdminPage.fxml"));
             stage.setTitle("Administration Page");
-            stage.setScene(new Scene(ceva, 600, 600));
+            stage.setScene(new Scene(root, 600, 600));
         }catch (Exception e){
             System.out.println(e);
         }
