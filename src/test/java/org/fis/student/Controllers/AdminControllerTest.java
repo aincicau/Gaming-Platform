@@ -15,6 +15,7 @@ import org.testfx.framework.junit.ApplicationTest;
 import java.util.ArrayList;
 
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertFalse;
 
 public class AdminControllerTest extends ApplicationTest {
     public static final String TEST_USER = "id1";
@@ -36,6 +37,7 @@ public class AdminControllerTest extends ApplicationTest {
         controller.fieldID = new TextField();
         controller.fieldPass = new PasswordField();
         controller.id = new Label();
+        controller.alertLabel = new Label();
     }
 
     @Test
@@ -73,6 +75,6 @@ public class AdminControllerTest extends ApplicationTest {
             }
         }
 
-        assertTrue("Login failed!",flag);
+        assertFalse("Login failed!",flag);
     }
 }

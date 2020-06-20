@@ -22,6 +22,13 @@ public class CustomerController {
     TextField fieldID;
     @FXML
     PasswordField fieldPass;
+    @FXML
+    Label alertLabel;
+
+    @FXML
+    public void initialize(){
+        alertLabel.setText("");
+    }
 
     @FXML
     public void butonBack()
@@ -29,9 +36,9 @@ public class CustomerController {
         try
         {
             Stage stage=(Stage)id.getScene().getWindow();
-            Parent ceva = FXMLLoader.load(getClass().getClassLoader().getResource("Choice.fxml"));
+            Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Choice.fxml"));
             stage.setTitle("Choice");
-            stage.setScene(new Scene(ceva,600,600));
+            stage.setScene(new Scene(root,600,600));
 
         }catch(IOException e) {
             System.out.println(e);
@@ -52,9 +59,9 @@ public class CustomerController {
                     }
 
                     Stage stage=(Stage)id.getScene().getWindow();
-                    Parent ceva = FXMLLoader.load(getClass().getClassLoader().getResource("ShopPage.fxml"));
+                    Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("ShopPage.fxml"));
                     stage.setTitle("Shop Page");
-                    stage.setScene(new Scene(ceva,600,600));
+                    stage.setScene(new Scene(root,600,600));
                 }catch (Exception e){
                     System.out.println(e);
                 }
@@ -62,7 +69,7 @@ public class CustomerController {
             else
                 throw new IncorrectCustomer();
         }catch (IncorrectCustomer e){
-            System.out.println(e);
+            alertLabel.setText("Incorrect data!");
         }
     }
 }

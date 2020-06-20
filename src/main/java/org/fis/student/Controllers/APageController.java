@@ -11,10 +11,8 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import org.fis.student.Models.Admin;
-import org.fis.student.Models.Customer;
 import org.fis.student.Models.Game;
 import org.fis.student.Services.AdminService;
-import org.fis.student.Services.CustomerService;
 import org.fis.student.Services.GameService;
 
 import java.util.ArrayList;
@@ -52,9 +50,9 @@ public class APageController {
             current.setLogged(false);
 
             Stage stage = (Stage) logButton.getScene().getWindow();
-            Parent ceva = FXMLLoader.load(getClass().getClassLoader().getResource("Choice.fxml"));
+            Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Choice.fxml"));
             stage.setTitle("Choice");
-            stage.setScene(new Scene(ceva, 600, 600));
+            stage.setScene(new Scene(root, 600, 600));
         } catch (Exception e) {
             System.out.println(e);
         }

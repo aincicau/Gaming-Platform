@@ -1,5 +1,6 @@
 package org.fis.student.Controllers;
 
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import org.fis.student.Models.Customer;
@@ -8,7 +9,9 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.testfx.framework.junit.ApplicationTest;
+
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertFalse;
 
 import java.util.ArrayList;
 
@@ -31,6 +34,7 @@ public class CustomerControllerTest extends ApplicationTest {
         controller = new CustomerController();
         controller.fieldID = new TextField();
         controller.fieldPass = new PasswordField();
+        controller.alertLabel = new Label();
     }
 
     @Test
@@ -68,6 +72,6 @@ public class CustomerControllerTest extends ApplicationTest {
             }
         }
 
-        assertTrue("Login failed!",flag);
+        assertFalse("Login failed!",flag);
     }
 }

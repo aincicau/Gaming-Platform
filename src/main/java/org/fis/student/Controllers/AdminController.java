@@ -22,6 +22,13 @@ public class AdminController {
     TextField fieldID;
     @FXML
     PasswordField fieldPass;
+    @FXML
+    Label alertLabel;
+
+    @FXML
+    public void initialize(){
+        alertLabel.setText("");
+    }
 
     @FXML
     public void butonBack()
@@ -29,9 +36,9 @@ public class AdminController {
         try
         {
             Stage stage=(Stage)id.getScene().getWindow();
-            Parent ceva = FXMLLoader.load(getClass().getClassLoader().getResource("Choice.fxml"));
+            Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Choice.fxml"));
             stage.setTitle("Choice");
-            stage.setScene(new Scene(ceva,600,600));
+            stage.setScene(new Scene(root,600,600));
 
         }catch(IOException e) {
             System.out.println(e);
@@ -51,9 +58,9 @@ public class AdminController {
                     }
 
                     Stage stage=(Stage)id.getScene().getWindow();
-                    Parent ceva = FXMLLoader.load(getClass().getClassLoader().getResource("AdminPage.fxml"));
+                    Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("AdminPage.fxml"));
                     stage.setTitle("Administration Page");
-                    stage.setScene(new Scene(ceva,600,600));
+                    stage.setScene(new Scene(root,600,600));
                 }catch (Exception e){
                     System.out.println(e);
                 }
@@ -61,7 +68,7 @@ public class AdminController {
             else
                 throw new IncorrectAdmin();
         }catch (IncorrectAdmin e){
-            System.out.println(e);
+            alertLabel.setText("Incorrect data!");
         }
     }
 }

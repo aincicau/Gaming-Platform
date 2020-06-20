@@ -11,6 +11,7 @@ import org.junit.Test;
 import org.testfx.framework.junit.ApplicationTest;
 
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertEquals;
 
 import java.util.ArrayList;
@@ -27,6 +28,7 @@ public class ShopControllerTest extends ApplicationTest {
         controller.priceColumn = new TableColumn<>();
         controller.labelCredit = new Label();
         controller.current = new Customer();
+        controller.alertLabel = new Label();
     }
 
     @Test
@@ -70,7 +72,7 @@ public class ShopControllerTest extends ApplicationTest {
             }
         }
 
-        assertTrue("Insufficient credit!",flag);
+        assertFalse("Insufficient credit!",flag);
     }
 
     @Test
@@ -85,6 +87,6 @@ public class ShopControllerTest extends ApplicationTest {
 
         controller.purchaseGame();
 
-        assertEquals("Game already bought!", 2, c.getGames().size());
+        assertEquals("Game already bought!", 1, c.getGames().size());
     }
 }

@@ -11,10 +11,6 @@ import javafx.stage.Stage;
 import org.fis.student.Models.Customer;
 import org.fis.student.Models.Game;
 import org.fis.student.Services.CustomerService;
-import org.fis.student.Services.GameService;
-
-import javax.swing.table.TableCellEditor;
-import javax.swing.text.TableView;
 import java.util.ArrayList;
 
 public class GamesController {
@@ -44,9 +40,9 @@ public class GamesController {
     public void backButton(){
         try{
             Stage stage=(Stage)tableView.getScene().getWindow();
-            Parent ceva = FXMLLoader.load(getClass().getClassLoader().getResource("ShopPage.fxml"));
+            Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("ShopPage.fxml"));
             stage.setTitle("Shop Page");
-            stage.setScene(new Scene(ceva,600,600));
+            stage.setScene(new Scene(root,600,600));
         }catch (Exception e){
             System.out.println(e);
         }

@@ -4,13 +4,13 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import org.fis.student.Exceptions.GameAlreadyExists;
 import org.fis.student.Models.Game;
 import org.fis.student.Services.GameService;
 
-import javax.xml.soap.Text;
 import java.util.ArrayList;
 
 public class AddGameController {
@@ -18,14 +18,21 @@ public class AddGameController {
     TextField nameField;
     @FXML
     TextField priceField;
+    @FXML
+    Label alertLabel;
+
+    @FXML
+    public void initialize(){
+        alertLabel.setText("");
+    }
 
     @FXML
     public void backButton(){
         try{
             Stage stage = (Stage) nameField.getScene().getWindow();
-            Parent ceva = FXMLLoader.load(getClass().getClassLoader().getResource("AdminPage.fxml"));
+            Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("AdminPage.fxml"));
             stage.setTitle("Administration Page");
-            stage.setScene(new Scene(ceva, 600, 600));
+            stage.setScene(new Scene(root, 600, 600));
         }catch (Exception e){
             System.out.println(e);
         }
@@ -48,9 +55,17 @@ public class AddGameController {
         }else{
             g.add(new Game(nameField.getText(),Integer.parseInt(priceField.getText())));
             GameService.writeGames();
+            try{
+                Stage stage=(Stage)nameField.getScene().getWindow();
+                Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("AdminPage.fxml"));
+                stage.setTitle("Administration Page");
+                stage.setScene(new Scene(root,600,600));
+            }catch (Exception e){
+                System.out.println(e);
+            }
         }
         }catch (Exception e){
-            System.out.println(e);
+            alertLabel.setText("Game already exists!");
         }
     }
 }

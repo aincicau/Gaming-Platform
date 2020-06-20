@@ -1,6 +1,5 @@
 package org.fis.student.Controllers;
 
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -29,11 +28,15 @@ public class ShopController {
     TableColumn<Game,Integer> priceColumn;
     @FXML
     Label labelCredit;
+    @FXML
+    Label alertLabel;
 
     Customer current;
 
     @FXML
     public void initialize(){
+        alertLabel.setText("");
+
         tableView.setItems(FXCollections.observableArrayList(GameService.getG()));
         nameColumn.setCellValueFactory(new PropertyValueFactory<Game,String>("name"));
         priceColumn.setCellValueFactory(new PropertyValueFactory<Game,Integer>("price"));
@@ -54,9 +57,9 @@ public class ShopController {
             current.setLogged(false);
 
             Stage stage = (Stage) logoutButton.getScene().getWindow();
-            Parent ceva = FXMLLoader.load(getClass().getClassLoader().getResource("Choice.fxml"));
+            Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Choice.fxml"));
             stage.setTitle("Choice");
-            stage.setScene(new Scene(ceva, 600, 600));
+            stage.setScene(new Scene(root, 600, 600));
         } catch (Exception e) {
             System.out.println(e);
         }
@@ -75,22 +78,23 @@ public class ShopController {
             }
         }
 
-        try{
-            if(!flag) {
-                if(current.getCredit()-g.getPrice()>=0) {
+        try {
+            if (!flag) {
+                if (current.getCredit() - g.getPrice() >= 0) {
                     current.setCredit(Integer.parseInt(labelCredit.getText()) - g.getPrice());
                     labelCredit.setText(String.valueOf(current.getCredit()));
                     currentUserGames.add(g);
-                }
-                else{
+                    alertLabel.setText("");
+                } else {
                     throw new InsufficientCredits();
                 }
-            }
-            else{
+            } else {
                 throw new GameAlreadyPurchased();
             }
+        }catch (InsufficientCredits e){
+            alertLabel.setText("Insufficient credits!");
         }catch (Exception e){
-            System.out.println(e);
+            alertLabel.setText("Game already bought!");
         }
 
         CustomerService.writeCustomers();
@@ -100,9 +104,9 @@ public class ShopController {
     public void myGames(){
         try{
             Stage stage=(Stage)tableView.getScene().getWindow();
-            Parent ceva = FXMLLoader.load(getClass().getClassLoader().getResource("MyGames.fxml"));
+            Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("MyGames.fxml"));
             stage.setTitle("My Games");
-            stage.setScene(new Scene(ceva,600,600));
+            stage.setScene(new Scene(root,600,600));
         }catch (Exception e){
             System.out.println(e);
         }

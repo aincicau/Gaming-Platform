@@ -63,7 +63,7 @@ public class RegisterControllerTest extends ApplicationTest {
         controller.register();
         controller.register();
 
-        assertEquals("Customer already exists!", 2, CustomerService.getC().size());
+        assertEquals("Customer already exists!", 1, CustomerService.getC().size());
     }
 
     @Test
@@ -94,7 +94,7 @@ public class RegisterControllerTest extends ApplicationTest {
         controller.register();
         controller.register();
 
-        assertEquals("Admin already exists!", 2, AdminService.getA().size());
+        assertEquals("Admin already exists!", 1, AdminService.getA().size());
     }
 
     @AfterClass

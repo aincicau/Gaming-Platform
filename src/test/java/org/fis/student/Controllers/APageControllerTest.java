@@ -46,6 +46,7 @@ public class APageControllerTest extends ApplicationTest {
 
     @Test
     public void deleteGameTest(){
+        GameService.getG().add(new Game("game",20));
         controller.tableView.getSelectionModel().select(GameService.getG().get(0));
 
         controller.deleteButton();
@@ -53,7 +54,6 @@ public class APageControllerTest extends ApplicationTest {
         assertEquals("Deleted", 0, GameService.getG().size());
 
         GameService.getG().clear();
-        GameService.getG().add(new Game("game",20));
         GameService.writeGames();
     }
 }

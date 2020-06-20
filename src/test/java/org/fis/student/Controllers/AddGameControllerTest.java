@@ -1,7 +1,7 @@
 package org.fis.student.Controllers;
 
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import org.fis.student.Models.Game;
 import org.fis.student.Services.GameService;
 import org.junit.After;
 import org.junit.Before;
@@ -25,6 +25,7 @@ public class AddGameControllerTest extends ApplicationTest {
         controller = new AddGameController();
         controller.nameField = new TextField();
         controller.priceField = new TextField();
+        controller.alertLabel = new Label();
     }
 
     @Test
@@ -34,12 +35,11 @@ public class AddGameControllerTest extends ApplicationTest {
 
         controller.addButton();
 
-        assertEquals("Added", 2, GameService.getG().size());
+        assertEquals("Added", 1, GameService.getG().size());
     }
     @After
     public void afterAddedSingleGame(){
         GameService.getG().clear();
-        GameService.getG().add(new Game("name", 20));
         GameService.writeGames();
     }
 
@@ -51,13 +51,12 @@ public class AddGameControllerTest extends ApplicationTest {
         controller.addButton();
         controller.addButton();
 
-        assertEquals("Second time not added", 3, GameService.getG().size());
+        assertEquals("Second time not added", 1, GameService.getG().size());
     }
 
     @After
     public void afterAddedGameTwice(){
         GameService.getG().clear();
-        GameService.getG().add(new Game("name", 20));
         GameService.writeGames();
     }
 }

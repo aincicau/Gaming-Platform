@@ -46,5 +46,6 @@
             <Image url="@6962284_thumb.png" />
          </image>
       </ImageView>
+      <Label fx:id="alertLabel" layoutX="252.0" layoutY="228.0" text="Game already exists!" />
    </children>
 </AnchorPane>
