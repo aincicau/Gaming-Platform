@@ -76,7 +76,6 @@ public class RegisterController {
 
             }catch(Exception e){
                 alertLabel.setText("User already exists!");
-                System.out.println(e);
             }
         }else{
             try {
@@ -101,7 +100,6 @@ public class RegisterController {
 
             }catch (Exception e){
                 alertLabel.setText("User already exists!");
-                System.out.println(e);
             }
         }
     }
