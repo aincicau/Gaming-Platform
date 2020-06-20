@@ -8,7 +8,9 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.testfx.framework.junit.ApplicationTest;
+
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertFalse;
 
 import java.util.ArrayList;
 
@@ -68,6 +70,6 @@ public class CustomerControllerTest extends ApplicationTest {
             }
         }
 
-        assertTrue("Login failed!",flag);
+        assertFalse("Login failed!",flag);
     }
 }

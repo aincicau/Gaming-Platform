@@ -34,12 +34,11 @@ public class AddGameControllerTest extends ApplicationTest {
 
         controller.addButton();
 
-        assertEquals("Added", 2, GameService.getG().size());
+        assertEquals("Added", 1, GameService.getG().size());
     }
     @After
     public void afterAddedSingleGame(){
         GameService.getG().clear();
-        GameService.getG().add(new Game("name", 20));
         GameService.writeGames();
     }
 
@@ -51,13 +50,12 @@ public class AddGameControllerTest extends ApplicationTest {
         controller.addButton();
         controller.addButton();
 
-        assertEquals("Second time not added", 3, GameService.getG().size());
+        assertEquals("Second time not added", 1, GameService.getG().size());
     }
 
     @After
     public void afterAddedGameTwice(){
         GameService.getG().clear();
-        GameService.getG().add(new Game("name", 20));
         GameService.writeGames();
     }
 }
