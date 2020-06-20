@@ -28,11 +28,15 @@ public class ShopController {
     TableColumn<Game,Integer> priceColumn;
     @FXML
     Label labelCredit;
+    @FXML
+    Label alertLabel;
 
     Customer current;
 
     @FXML
     public void initialize(){
+        alertLabel.setText("");
+
         tableView.setItems(FXCollections.observableArrayList(GameService.getG()));
         nameColumn.setCellValueFactory(new PropertyValueFactory<Game,String>("name"));
         priceColumn.setCellValueFactory(new PropertyValueFactory<Game,Integer>("price"));
@@ -89,7 +93,7 @@ public class ShopController {
                 throw new GameAlreadyPurchased();
             }
         }catch (Exception e){
-            System.out.println(e);
+            alertLabel.setText("Game already bought!");
         }
 
         CustomerService.writeCustomers();

@@ -28,6 +28,7 @@ public class ShopControllerTest extends ApplicationTest {
         controller.priceColumn = new TableColumn<>();
         controller.labelCredit = new Label();
         controller.current = new Customer();
+        controller.alertLabel = new Label();
     }
 
     @Test

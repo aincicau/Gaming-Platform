@@ -55,6 +55,14 @@ public class AddGameController {
         }else{
             g.add(new Game(nameField.getText(),Integer.parseInt(priceField.getText())));
             GameService.writeGames();
+            try{
+                Stage stage=(Stage)nameField.getScene().getWindow();
+                Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("AdminPage.fxml"));
+                stage.setTitle("Administration Page");
+                stage.setScene(new Scene(root,600,600));
+            }catch (Exception e){
+                System.out.println(e);
+            }
         }
         }catch (Exception e){
             alertLabel.setText("Game already exists!");
